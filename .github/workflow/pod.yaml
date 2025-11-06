@@ -4,13 +4,16 @@ on:
   push:
     branches:
       - develop
+
 jobs:
   dotnet_publish:
     runs-on: 'self-hosted'
+
     steps:
       - name: code checkout
         uses: actions/checkout@v5
-      - name: this is mydotnetpublicshcommand
+
+      - name: publish dotnet
         run: dotnet publish -c Release src/Presentation/Nop.Web/Nop.Web.csproj -o demo
 
 
