@@ -24,7 +24,7 @@ jobs:
            run: |
              aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 934545598565.dkr.ecr.eu-north-1.amazonaws.com
              docker image build -t dotnetapp:1.0 .
-             docker image tag dotnet:1.0 tag 934545598565.dkr.ecr.eu-north-1.amazonaws.com/githubaction:latest
+             docker image tag dotnet:1.0 934545598565.dkr.ecr.eu-north-1.amazonaws.com/githubaction:latest
              docker push  934545598565.dkr.ecr.eu-north-1.amazonaws.com/githubaction:latest 
          - name: EKS with manifestfile
            uses: actions-hub/kubectl@master
